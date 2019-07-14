@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula 03 - diretivas-v-if-v-show-v-else</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<!-- Begin page content -->
+
+    <div id="app">
+        <h1 v-if="status">{{ titulo }}</h1>
+        <strong v-else>Não existe título cadastrado</strong>
+        <p v-if="texto">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+    			sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+    			magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+    			quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+    			ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+    			dolor in hendrerit in vulputate velit esse molestie consequat,
+    			vel illum dolore eu feugiat nulla facilisis at vero eros et
+    			accumsan et iusto odio dignissim qui blandit praesent luptatum
+        </p>
+        <span v-else>Não existe texto cadastrado</span>
+
+
+        <hr>
+
+
+        <div v-if="usuario.id == 1">
+          Id: {{ usuario.id}}, <br>
+          Nome: {{ usuario.nome}}, <br>
+          Idade: {{ usuario.idade}}, <br>
+          Profissao: {{ usuario.profissao}}
+        </div>
+
+        <div v-else>Nenhum usuário com id: 1 encontrado</div>
+    </div>
+
+
+    <script>
+    var app = new Vue({
+    el: "#app",
+    data: {
+      status: true, // true ou false, aqui define o status
+      texto: true,
+      titulo: "Aula 03 - Diretivas: v-if, v-else,v-show",
+        usuario: {
+          id: 1,
+          nome: "curumim",
+          idade: 29,
+          profissao: "designer"
+        }
+
+      }
+    });
+
+    </script>
+
+
+
+</body>
+</html>

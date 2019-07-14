@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula 03 - diretivas-v-if-v-show-v-else</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<!-- Begin page content -->
+
+    <h1>Currículo</h1>
+      <div id="app">
+      <div v-if="infos.id == 1">
+
+      <h2 v-if="infos.status">Nome: {{ infos.nome }}</h2>
+      <span v-else>nenhum nome cadastrado</span><br>
+
+      <h2 v-if="infos.status">Profissão: {{ infos.profissao }}</h2>
+      <span v-else>nenhuma profissão cadastrada</span>
+      <br>
+      <strong>Bio:</strong>
+      <p v-if="status">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore	magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </p>
+      <span v-else>nenhuma bio cadastrada</span>
+
+      <hr>
+      <strong>Skills</strong>
+      <ul>
+        <li>Desenvolvimento: {{ skills.desenvolvimento }}</li>
+        <li>Design: {{ skills.design }}</li>
+        <li>Gestão: {{ skills.gestao}}</li>
+      </ul>
+      </div>
+
+      <span v-else>nenhum usuario encontrado</span>
+    </div>
+
+
+    <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        status: true,// true ou false, aqui define o status
+        infos:{
+          status: true,// true ou false, aqui define o status
+          id: 1,
+          nome: "Diego Curumim",
+          idade: 29,
+          profissao: "Designer/Dev"
+        },
+        skills:{
+          desenvolvimento: "60%",
+          design: "80%",
+          gestao: "70%"
+        }
+
+      }
+
+
+      });
+
+
+    </script>
+
+
+
+</body>
+</html>
