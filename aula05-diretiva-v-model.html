@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula 05 - Diretiva: v-model</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<!-- Begin page content -->
+
+    <div id="app">
+      <h1>{{ titulo }}</h1>
+
+      <form>
+						<div class="form-group">
+							<label>Nome</label>
+							<input type="text" v-model="nome" class="form-control" placeholder="seu nome">
+						</div>
+            <br>
+
+            <div class="form-group">
+              <label>Telefone</label>
+              <input type="text" v-model="telefone" class="form-control" placeholder="seu telefone">
+            </div>
+
+						<div class="form-group">
+							<label>Deseja receber novidades?</label>
+							<input type="radio" value="sim" v-model="novidades">
+							<input type="radio" value="não" v-model="novidades">
+						</div>
+
+						<div class="form-group">
+							<label>Interesses</label>
+              <input type="checkbox" value="Kungfu" v-model="interesses" id="Check1">
+              <label class="form-check-label" for="Check1">Kungfu</label>
+              <input type="checkbox" value="Skate" v-model="interesses" id="Check2">
+              <label class="form-check-label" for="Check2">Skate</label>
+              <input type="checkbox" value="Futebol" v-model="interesses" id="Check3">
+              <label class="form-check-label" for="Check3">Futebol</label>
+						</div>
+            <div class="form-group">
+							<label for="exampleFormControlSelect2">Como nos conheceu</label>
+							<select multiple class="form-control" v-model="opcoes" id="exampleFormControlSelect2">
+						      <option>Google</option>
+						      <option>TV</option>
+						      <option>Rádio</option>
+						      <option>Mídias sociais</option>
+						    </select>
+						</div>
+					</form>
+          <hr>
+          <br>
+          Nome: {{nome}} <br>
+          Telefone: {{ telefone}} <br>
+          Receber novidades: {{ novidades }} <br>
+          Interesses esportivos: {{ interesses }} <br>
+          Como conheceu: {{ opcoes }}
+    </div>
+
+
+    <script>
+    var app = new Vue({
+    el: "#app",
+    data: {
+      titulo: "Aula 05 - Diretiva: v-model",
+      nome: "",
+      telefone: "",
+      novidades:"",
+      interesses:[],
+      opcoes:"",
+      }
+    });
+
+    </script>
+
+
+
+</body>
+</html>

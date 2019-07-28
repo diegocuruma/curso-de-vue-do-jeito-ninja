@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula 04 - Diretiva: v-for</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<!-- Begin page content -->
+
+    <div id="app">
+      <h1>{{ titulo }}</h1>
+
+      <ul>
+        <li v-for="(item, index) in listagem">{{ index }} - {{ item.nome }}</li>
+      </ul>
+    </div>
+
+
+    <script>
+    var app = new Vue({
+    el: "#app",
+    data: {
+      titulo: "Aula 04 - Diretiva: v-for",
+        listagem:[
+          {nome: "Diego"},
+          {nome: "Camilo"},
+          {nome: "Feitosa"},
+          {nome: "Designer"},
+          {nome: "Desenvolvedor"}
+        ]
+      }
+    });
+
+    </script>
+
+
+
+</body>
+</html>
