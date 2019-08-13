@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula 06 - Vue.js diretiva v-bind</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style media="screen">
+      .gold{
+        color: gold
+      }
+      .red{
+        color: red
+      }
+    </style>
+</head>
+<body>
+<!-- Begin page content -->
+
+    <div id="app">
+        <h1 v-if="status">{{ titulo }}</h1>
+        <img v-if="statusimg" v-bind:src="imagem" :alt="alt":width="w" :height="h">
+        <strong v-else>Não existe imagem cadastrada</strong>
+
+
+        <p v-bind:class="classHtml">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum</p>
+    </div>
+
+
+    <script>
+    var app = new Vue({
+    el: "#app",
+    data: {
+      status: true, // true ou false, aqui define o status
+      titulo: "Aula 06 - Vue.js diretiva v-bind",
+      imagem:"https://image.dhgate.com/f2/albu/g10/M00/E8/C5/rBVaVlyR6LqAb_TBAAD5v_5DH8s211.jpg?7e3f5ea0f7e8c58e295b86cf7c7cee7e",
+      alt: "Imagem do Picachu",
+      w: "300",
+      h: "300",
+      statusimg:true, // define se tem ou não img, aí joga o STRONG(Não existe imagem cadastrada)
+
+      //  define uma classe no Parágrafo
+      classHtml:"gold"
+      }
+    });
+
+    </script>
+
+
+
+</body>
+</html>
