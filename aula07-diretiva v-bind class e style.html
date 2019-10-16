@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula 07 - Vue.js diretiva v-bind class e style</title>
+    <script src="https://unpkg.com/vue"></script>
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<!-- Begin page content -->
+
+    <div id="app">
+        <h1 v-if="status">{{ titulo }}</h1>
+        <button class="btn" v-bind:class="btnClassEnviar" v-bind:style="btnStyleEnviar">Enviar</button>
+        <button class="btn" v-bind:class="btnClassLimpar" v-bind:style="btnStyleLimpar">Limpar</button>
+    </div>
+
+
+    <script>
+    var app = new Vue({
+    el: "#app",
+    data: {
+      titulo: "Aula 07 - Vue.js diretiva v-bind class e style",
+      status: true,
+      // define uma classe como objeto
+      btnClassEnviar:{
+      'btn-success': true,
+      'btn-sm': true
+      },
+      // define uma classe como array e dentro classe com objeto
+      btnClassLimpar:[
+      'btn-danger',
+        {
+        'btn-lg': true
+        }
+      ],
+      // define style inline com array de objetos
+      btnStyleEnviar:[
+        {
+        'font-size':'50px'
+        },
+        {
+        'text-transform':'uppercase'
+        }
+      ],
+      // define style inline com objetos
+      btnStyleLimpar:{
+        'font-size':'10px'
+      }
+    }
+    });
+
+    </script>
+
+
+
+</body>
+</html>
