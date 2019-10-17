@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula 08 - Vue.js diretiva v-on</title>
+    <script src="https://unpkg.com/vue"></script>
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<!-- Begin page content -->
+
+    <div id="app">
+        <h1 v-if="status" v-bind:class="btnClassEnviar">{{ titulo }}</h1>
+        <form action="https://ahsakodigitais.com">
+
+        <button class="btn" v-bind:class="btnClassEnviar" v-on:click.prevent.stop="enviar()">Enviar</button>
+        </form>
+    </div>
+
+
+    <script>
+    var app = new Vue({
+    el: "#app",
+    data: {
+      titulo: "Aula 07 - Vue.js diretiva v-bind class e style",
+      status: true,
+      btnClassEnviar: "btn-success ml-5"
+      },
+      methods:{
+        enviar(){
+          alert("enviado!");
+        },
+      }
+    });
+
+    </script>
+
+
+
+</body>
+</html>
